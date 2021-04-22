@@ -1,26 +1,25 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
   <mat-card fxFlex="25">
-    <mat-toolbar color="primary">Login Page</mat-toolbar>
+    <mat-toolbar color="accent">Sign In</mat-toolbar>
 
     <form
       fxLayoutAlign="stretch"
       fxLayout="column"
-      class='login-form'
+      class="login-form"
       [formGroup]="loginForm"
     >
-<!--      value: {{myForm.value | json}}-->
       <mat-form-field>
         <label>
           <input
             formControlName="email"
             type="text"
             matInput
-            placeholder="email"
+            placeholder="Email"
           />
         </label>
 
         <mat-error *ngIf="email.invalid && email.touched">
-          Check Your email plzzzz
+          Invalid email
         </mat-error>
       </mat-form-field>
 
@@ -29,17 +28,33 @@
           <input
             type="password"
             matInput
-            placeholder="password"
+            placeholder="Password"
             formControlName="password"
           />
         </label>
 
         <mat-error *ngIf="password.invalid && password.touched">
-          Check Your password plzzzz
+          Invalid password
         </mat-error>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit" (click)="submit($event)">Login</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="submit($event)"
+      >
+        Sign in
+      </button>
+      <button
+        routerLink="/signup"
+        class="btn"
+        color="basic"
+        mat-stroked-button
+        style="margin-top: 1rem"
+      >
+        Got to Sign Up page
+      </button>
     </form>
   </mat-card>
 </div>

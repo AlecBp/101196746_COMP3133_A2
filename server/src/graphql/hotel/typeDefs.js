@@ -1,6 +1,6 @@
 import { gql } from "apollo-server-express";
 
-export const typeDefs = gql`  
+export const typeDefs = gql`
   type Hotel {
     id: ID!
     name: String!

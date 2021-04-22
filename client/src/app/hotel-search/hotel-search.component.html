@@ -1,0 +1,58 @@
+<div class="header">
+  <h1>Hotel search</h1>
+</div>
+<div fxLayoutAlign="center center" class="form-box">
+  <mat-card fxFlex="25">
+    <form
+      fxLayoutAlign="stretch"
+      fxLayout="column"
+      class="login-form"
+      [formGroup]="searchBox"
+    >
+      <mat-form-field>
+        <label>
+          <input
+            formControlName="filter"
+            type="text"
+            matInput
+            placeholder="Search text..."
+          />
+        </label>
+      </mat-form-field>
+
+      <div class="btn-container">
+        <button
+          (click)="getByName()"
+          class="btn"
+          mat-raised-button
+          color="accent"
+          type="submit"
+        >
+          By hotel name
+        </button>
+        <button
+          (click)="getByCity()"
+          class="btn"
+          mat-raised-button
+          color="accent"
+          type="submit"
+        >
+          By hotel city
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+
+<div class="container">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="!loading">
+    <div
+      [fxFlex]="100 / gridColumns + '%'"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let hotel of hotels"
+    >
+      <app-hotel-card [hotel]="hotel"></app-hotel-card>
+    </div>
+  </div>
+</div>

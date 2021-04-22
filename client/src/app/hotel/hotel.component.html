@@ -1,6 +1,14 @@
+<div class="header">
+  <h1 style="margin: 1rem">Hotels</h1>
+</div>
 <div class="container">
   <div fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="!loading">
-    <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let hotel of hotels">
+    <div
+      [fxFlex]="100 / gridColumns + '%'"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let hotel of hotels"
+    >
       <app-hotel-card [hotel]="hotel"></app-hotel-card>
     </div>
   </div>

@@ -25,7 +25,6 @@ const typeDefs = gql`
   ${auth.typeDefs}
   ${hotel.typeDefs}
   ${booking.typeDefs}
-  
 `;
 
 module.exports = {

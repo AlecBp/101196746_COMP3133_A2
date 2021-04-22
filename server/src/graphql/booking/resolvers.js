@@ -1,5 +1,5 @@
-import {Booking} from "../../models";
-import {ForbiddenError} from "apollo-server-express";
+import { Booking } from "../../models";
+import { ForbiddenError } from "apollo-server-express";
 
 export const resolvers = {
   Query: {
@@ -11,7 +11,7 @@ export const resolvers = {
     },
     hotelBooking: (_, { hotelId }) => {
       return Booking.find({ hotel: hotelId });
-    }
+    },
   },
   Mutation: {
     addBooking: async (_, { bookingInput }) => {
@@ -26,5 +26,5 @@ export const resolvers = {
     hotel: async (booking, _) => {
       return (await booking.populate("hotel").execPopulate()).hotel;
     },
-  }
+  },
 };

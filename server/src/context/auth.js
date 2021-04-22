@@ -1,7 +1,7 @@
 import { verify } from "jsonwebtoken";
 
 export const authCtx = req => {
-  const token = req.cookies.refresh;
+  const token = req.cookies[process.env.COOKIE];
   // const authHeader = req.get("authorization");
   const context = { isAuth: false, userId: null };
   if (!token) {

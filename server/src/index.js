@@ -11,10 +11,12 @@ import { AuthService } from "./service/auth";
 const app = express();
 const PORT = process.env.PORT || 4001;
 
-app.use(cors({
-  credentials: true,
-  origin: ["http://localhost:4200"]
-}));
+app.use(
+  cors({
+    credentials: true,
+    origin: ["http://localhost:4200"],
+  })
+);
 app.use(cookieParser());
 
 const startServer = async () => {
@@ -32,7 +34,7 @@ const startServer = async () => {
   server.applyMiddleware({ app, cors: false });
 
   await mongoose
-    .connect(process.env.MONGO_URL, {
+    .connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
@@ -43,7 +45,7 @@ const startServer = async () => {
         )
       );
     })
-    .catch(err => console.log("mongodb failed", err));
+    .catch(err => console.log("MongoDB connection failed", err));
 };
 
 startServer();

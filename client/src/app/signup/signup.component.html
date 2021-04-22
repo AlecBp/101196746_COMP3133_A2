@@ -5,7 +5,7 @@
     <form
       fxLayoutAlign="stretch"
       fxLayout="column"
-      class='login-form'
+      class="login-form"
       [formGroup]="signupForm"
     >
       <!--      value: {{signupForm.value | json}}-->
@@ -15,12 +15,12 @@
             formControlName="email"
             type="text"
             matInput
-            placeholder="email"
+            placeholder="Email"
           />
         </label>
 
         <mat-error *ngIf="email.invalid && email.touched">
-          Check Your email plzzzz
+          Invalid email
         </mat-error>
       </mat-form-field>
 
@@ -29,13 +29,13 @@
           <input
             type="password"
             matInput
-            placeholder="password"
+            placeholder="Password"
             formControlName="password"
           />
         </label>
 
         <mat-error *ngIf="password.invalid && password.touched">
-          Check Your password plzzzz
+          Invalid password
         </mat-error>
       </mat-form-field>
 
@@ -50,7 +50,7 @@
         </label>
 
         <mat-error *ngIf="firstName.invalid && firstName.touched">
-          number cannot be included
+          Invalid first name
         </mat-error>
       </mat-form-field>
 
@@ -65,13 +65,27 @@
         </label>
 
         <mat-error *ngIf="lastName.invalid && lastName.touched">
-          number cannot be included
+          Invalid last name
         </mat-error>
       </mat-form-field>
 
-
-
-      <button mat-raised-button color="accent" type="submit" (click)="submit($event)">Signup</button>
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit"
+        (click)="submit($event)"
+      >
+        Sign up
+      </button>
+      <button
+        routerLink="/"
+        class="btn"
+        color="basic"
+        mat-stroked-button
+        style="margin-top: 1rem"
+      >
+        Go to Sign In page
+      </button>
     </form>
   </mat-card>
 </div>

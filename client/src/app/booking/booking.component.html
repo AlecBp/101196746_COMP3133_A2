@@ -1,6 +1,14 @@
 <div class="container">
+  <div class="header">
+    <h1 style="margin: 1rem">My Bookings</h1>
+  </div>
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let booking of bookings">
+    <div
+      [fxFlex]="100 / gridColumns + '%'"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let booking of bookings"
+    >
       <app-booking-card [booking]="booking"></app-booking-card>
     </div>
   </div>
