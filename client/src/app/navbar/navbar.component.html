@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <div class="flexbox">
+    <span>Hotel App</span>
+
+    <div>
+      <button routerLink="/booking" class="btn" color="accent" mat-flat-button>Booking</button>
+      <button routerLink="/hotel" class="btn" color="accent" mat-flat-button>Hotel</button>
+      <button routerLink="/search-hotel" class="btn" color="accent" mat-flat-button>Search Hotel</button>
+      <button routerLink="/signup" class="btn" color="accent" mat-flat-button>Sign Up</button>
+      <button (click)="logout($event)" class="btn" color="accent" mat-flat-button>Logout</button>
+    </div>
+  </div>
+</mat-toolbar>

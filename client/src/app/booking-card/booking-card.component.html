@@ -1,0 +1,33 @@
+<mat-card class="mat-elevation-z4 booking-card">
+  <mat-card-header class="card-header">
+    <mat-card-title>
+      <p>
+        Booking ID: {{booking.id}}
+      </p>
+      <p>
+        Customer: Mr/Miss.{{booking.user.fullName}}
+      </p>
+    </mat-card-title>
+
+  </mat-card-header>
+  <mat-card-content class="booking-card">
+    <h1>
+      Hotel: {{booking.hotel.name}}
+    </h1>
+    <p>
+      Address: {{booking.hotel.address}}
+    </p>
+    <div class="booking-time">
+      <p>
+        Checkin: {{booking.start}}
+      </p>
+      <p>
+        Checkout: {{booking.end}}
+      </p>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions class="card-action">
+    <!--    <button color="primary" mat-flat-button (click)="navigate('mission')">See More</button>-->
+  </mat-card-actions>
+</mat-card>
